@@ -1,5 +1,61 @@
+import { motion } from "motion/react";
 import Container from "./Container";
-import SocialLink from "./SocialLink";
+import { Github } from "./icons";
+import HeroTypewriter from "./HeroTypewriter";
+import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
+import {
+  buttonHover,
+  buttonTap,
+  hoverTransition,
+  pressTransition,
+} from "../motion/transitions";
+
+function CtaLink({ href, children, variant = "primary", className = "", ...props }) {
+  const reducedMotion = usePrefersReducedMotion();
+
+  const base =
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded px-5 text-sm font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+
+  const styles =
+    variant === "primary"
+      ? "bg-accent text-background"
+      : "border border-border text-foreground";
+
+  if (reducedMotion) {
+    return (
+      <a
+        href={href}
+        className={`transition-hover ${base} ${styles} ${variant === "primary" ? "hover:brightness-110" : "hover:border-accent hover:text-accent"} ${className}`.trim()}
+        data-cursor="hover"
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <motion.a
+      href={href}
+      className={`${base} ${styles} ${className}`.trim()}
+      data-cursor="hover"
+      whileHover={{
+        ...buttonHover,
+        ...(variant === "primary"
+          ? { filter: "brightness(1.08)" }
+          : {
+              borderColor: "var(--color-accent)",
+              color: "var(--color-accent)",
+            }),
+      }}
+      whileTap={{ ...buttonTap, transition: pressTransition }}
+      transition={hoverTransition}
+      {...props}
+    >
+      {children}
+    </motion.a>
+  );
+}
 
 export default function Hero() {
   return (
@@ -17,9 +73,7 @@ export default function Hero() {
             SAMBHAV GUPTA
           </h1>
 
-          <p className="hero-enter-item mt-3 text-lg text-muted md:mt-4 md:text-xl">
-            Full-Stack Web Developer
-          </p>
+          <HeroTypewriter className="hero-enter-item mt-3 text-lg text-muted md:mt-4 md:text-xl" />
 
           <p className="hero-enter-item mt-5 max-w-xl text-base leading-relaxed text-muted md:mt-6">
             Building responsive, user-focused web applications with React,
@@ -28,19 +82,18 @@ export default function Hero() {
           </p>
 
           <div className="hero-enter-item mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#work"
-              className="inline-flex min-h-11 items-center justify-center rounded bg-accent px-5 text-sm font-medium text-background hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-            >
+            <CtaLink href="#work" variant="primary">
               View Work
-            </a>
-            <SocialLink
-              id="github"
+            </CtaLink>
+            <CtaLink
               href="https://github.com/Sambhav-Gupta12"
-              label="GitHub"
-              iconSize="md"
-              className="min-h-11 justify-center rounded border border-border px-5 text-sm font-medium text-foreground hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-            />
+              variant="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={16} aria-hidden="true" className="shrink-0" />
+              GitHub
+            </CtaLink>
           </div>
         </div>
       </Container>

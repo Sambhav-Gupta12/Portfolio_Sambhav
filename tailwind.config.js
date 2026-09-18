@@ -33,6 +33,13 @@ export default {
       maxWidth: {
         container: "var(--container-max)",
       },
+      transitionDuration: {
+        hover: "var(--duration-hover)",
+        press: "var(--duration-press)",
+      },
+      transitionTimingFunction: {
+        hover: "var(--ease-hover)",
+      },
     },
   },
   plugins: [],

@@ -1,4 +1,5 @@
 import Container from "./Container";
+import { RevealSection } from "./Reveal";
 
 const GROUPS = [
   {
@@ -21,11 +22,10 @@ const GROUPS = [
 
 export default function Technologies() {
   return (
-    <section
+    <RevealSection
       id="technologies"
       aria-labelledby="technologies-heading"
       className="scroll-mt-12 border-b border-border"
-      data-reveal
     >
       <Container className="py-12 md:py-16 lg:py-20">
         <header className="max-w-xl">
@@ -40,7 +40,6 @@ export default function Technologies() {
           </p>
         </header>
 
-        {/* 360: 1 col · 768: 2 cols · 1024+: 4 cols */}
         <div className="mt-8 grid gap-8 md:mt-10 md:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:grid-cols-4">
           {GROUPS.map((group) => (
             <div key={group.title} className="min-w-0">
@@ -52,10 +51,7 @@ export default function Technologies() {
                 aria-label={group.title}
               >
                 {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded border border-border px-3 py-1.5 font-mono text-xs leading-snug text-muted"
-                  >
+                  <li key={item} className="tech-chip cursor-default">
                     {item}
                   </li>
                 ))}
@@ -64,6 +60,6 @@ export default function Technologies() {
           ))}
         </div>
       </Container>
-    </section>
+    </RevealSection>
   );
 }

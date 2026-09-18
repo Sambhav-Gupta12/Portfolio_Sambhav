@@ -9,15 +9,6 @@ const NAV_LINKS = [
   { href: "#contact", id: "contact", label: "Contact" },
 ];
 
-function linkClassName(isActive) {
-  return [
-    "text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
-    isActive
-      ? "font-medium text-accent"
-      : "text-muted hover:text-accent",
-  ].join(" ");
-}
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const menuId = useId();
@@ -56,7 +47,8 @@ export default function Navbar() {
         <Container className="flex h-12 items-center justify-between gap-3">
           <a
             href="#hero"
-            className="inline-flex min-h-11 shrink-0 items-center text-sm font-medium tracking-wide text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="transition-hover inline-flex min-h-11 shrink-0 items-center text-sm font-medium tracking-wide text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            data-cursor="hover"
             onClick={closeMenu}
           >
             SAMBHAV GUPTA
@@ -69,7 +61,8 @@ export default function Navbar() {
                 <li key={href}>
                   <a
                     href={href}
-                    className={`${linkClassName(isActive)} inline-flex min-h-11 items-center px-2.5`}
+                    className="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                    data-cursor="hover"
                     aria-current={isActive ? "true" : undefined}
                   >
                     {label}
@@ -81,7 +74,8 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded border border-border text-foreground hover:border-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:hidden"
+            className="transition-hover inline-flex h-11 w-11 items-center justify-center rounded border border-border text-foreground hover:border-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:hidden"
+            data-cursor="hover"
             aria-expanded={open}
             aria-controls={menuId}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -89,13 +83,13 @@ export default function Navbar() {
           >
             <span aria-hidden="true" className="flex flex-col gap-1.5">
               <span
-                className={`block h-px w-4 bg-current motion-safe:transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
+                className={`block h-px w-4 bg-current transition-hover ${open ? "translate-y-[3.5px] rotate-45" : ""}`}
               />
               <span
-                className={`block h-px w-4 bg-current motion-safe:transition-opacity ${open ? "opacity-0" : ""}`}
+                className={`block h-px w-4 bg-current transition-hover ${open ? "opacity-0" : ""}`}
               />
               <span
-                className={`block h-px w-4 bg-current motion-safe:transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
+                className={`block h-px w-4 bg-current transition-hover ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`}
               />
             </span>
           </button>
@@ -112,7 +106,8 @@ export default function Navbar() {
                 <li key={href}>
                   <a
                     href={href}
-                    className={`${linkClassName(isActive)} flex min-h-11 items-center`}
+                    className="nav-link-mobile focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                    data-cursor="hover"
                     aria-current={isActive ? "true" : undefined}
                     onClick={closeMenu}
                   >

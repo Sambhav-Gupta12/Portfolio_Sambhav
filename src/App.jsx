@@ -7,15 +7,14 @@ import Journey from "./components/Journey";
 import GitHubActivity from "./components/GitHubActivity";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import CustomCursor from "./components/CustomCursor";
 import { projects } from "./data/projects";
-import { useSectionReveal } from "./hooks/useSectionReveal";
 
 function App() {
-  useSectionReveal();
-
   return (
     <>
-      <a href="#main" className="skip-link">
+      <CustomCursor />
+      <a href="#main" className="skip-link" data-cursor="hover">
         Skip to main content
       </a>
       <Navbar />

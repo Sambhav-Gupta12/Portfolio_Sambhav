@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Github } from "./icons";
 import Container from "./Container";
+import { RevealSection } from "./Reveal";
 
 const MAX_REPOS = 8;
 
@@ -53,11 +54,10 @@ export default function GitHubActivity() {
   }, []);
 
   return (
-    <section
+    <RevealSection
       id="activity"
       aria-labelledby="activity-heading"
       className="scroll-mt-12 border-b border-border"
-      data-reveal
     >
       <Container className="py-12 md:py-14">
         <header className="flex flex-wrap items-end justify-between gap-3">
@@ -76,7 +76,8 @@ export default function GitHubActivity() {
             href="https://github.com/Sambhav-Gupta12"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-2 text-sm text-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            data-cursor="hover"
+            className="inline-flex min-h-11 items-center gap-2 text-sm text-muted transition-hover hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <Github size={14} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
             <span>View profile</span>
@@ -108,7 +109,8 @@ export default function GitHubActivity() {
                   href={repo.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block h-full min-h-11 rounded border border-border p-3 transition-[border-color] duration-200 hover:border-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  data-cursor="hover"
+                  className="block h-full min-h-11 rounded border border-border p-3 transition-hover hover:border-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   <div className="flex items-baseline justify-between gap-2">
                     <span className="truncate text-sm font-medium text-foreground">
@@ -134,6 +136,6 @@ export default function GitHubActivity() {
           </ul>
         )}
       </Container>
-    </section>
+    </RevealSection>
   );
 }

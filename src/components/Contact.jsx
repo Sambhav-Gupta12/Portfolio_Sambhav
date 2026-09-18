@@ -1,14 +1,14 @@
 import Container from "./Container";
 import SocialLink from "./SocialLink";
 import { socialLinks } from "../data/social";
+import { RevealSection } from "./Reveal";
 
 export default function Contact() {
   return (
-    <section
+    <RevealSection
       id="contact"
       aria-labelledby="contact-heading"
       className="scroll-mt-12 border-b border-border"
-      data-reveal
     >
       <Container className="py-14 md:py-20">
         <div className="max-w-xl">
@@ -38,6 +38,6 @@ export default function Contact() {
           </ul>
         </div>
       </Container>
-    </section>
+    </RevealSection>
   );
 }

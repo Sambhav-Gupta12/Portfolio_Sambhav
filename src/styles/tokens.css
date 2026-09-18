@@ -32,4 +32,9 @@
 
   /* Layout */
   --container-max: 72rem; /* 1152px */
+
+  /* Interaction — one hover system (150–250ms) */
+  --duration-hover: 200ms;
+  --duration-press: 120ms;
+  --ease-hover: cubic-bezier(0.25, 0.1, 0.25, 1);
 }

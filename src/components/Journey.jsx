@@ -1,32 +1,36 @@
 import Container from "./Container";
+import { RevealSection } from "./Reveal";
 
 const STEPS = [
   {
     title: "Frontend fundamentals",
-    detail: "HTML, CSS, and JavaScript—building pages and learning the basics of the web.",
+    detail:
+      "HTML, CSS, and JavaScript—building pages and learning the basics of the web.",
   },
   {
     title: "React",
-    detail: "Component-driven UIs, state, and structuring interactive client applications.",
+    detail:
+      "Component-driven UIs, state, and structuring interactive client applications.",
   },
   {
     title: "Full-stack",
-    detail: "Node.js, Express, and MongoDB—APIs, persistence, and connecting frontend to backend.",
+    detail:
+      "Node.js, Express, and MongoDB—APIs, persistence, and connecting frontend to backend.",
   },
   {
     title: "Databases & system design",
-    detail: "Current focus—deeper database work, backend patterns, and system design fundamentals.",
+    detail:
+      "Current focus—deeper database work, backend patterns, and system design fundamentals.",
     current: true,
   },
 ];
 
 export default function Journey() {
   return (
-    <section
+    <RevealSection
       id="journey"
       aria-labelledby="journey-heading"
       className="scroll-mt-12 border-b border-border"
-      data-reveal
     >
       <Container className="py-14 md:py-20">
         <header className="max-w-xl">
@@ -69,6 +73,6 @@ export default function Journey() {
           ))}
         </ol>
       </Container>
-    </section>
+    </RevealSection>
   );
 }

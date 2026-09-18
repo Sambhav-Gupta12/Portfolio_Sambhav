@@ -25,7 +25,8 @@ export default function SocialLink({
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={`inline-flex items-center gap-2 ${className}`.trim()}
+      className={`transition-hover inline-flex items-center gap-2 ${className}`.trim()}
+      data-cursor="hover"
     >
       {Icon ? (
         <Icon

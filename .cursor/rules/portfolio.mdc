@@ -51,6 +51,9 @@ Avoid: dominant gradients, glassmorphism, neon glow, giant animated type, floati
 
 ## Animation (allowed vs avoid)
 
+**One animation system only:** use the `motion` package (`import { motion } from "motion/react"`) plus native CSS transitions. Do not add other animation libraries (no GSAP, no react-spring, no anime.js, etc.).
+
 **Allowed:** subtle section reveals, restrained text entrance, image hover scale ~1.01–1.03, small translate/opacity, smooth anchors, active nav state.
 
-**Avoid:** cursor blobs, magnetic buttons everywhere, scroll hijacking, perpetual floating, particles, excessive parallax, animated gradients, WebGL/shaders unless explicitly approved.
+**Avoid:** cursor blobs, magnetic buttons everywhere, scroll hijacking, perpetual floating, particles, excessive parallax, animated gradients, WebGL/shaders unless explicitly approved. Always respect `prefers-reduced-motion`.
+
