@@ -1,0 +1,56 @@
+---
+description: Portfolio design system — consult before every UI/frontend change
+alwaysApply: true
+---
+
+# Sambhav Gupta — Portfolio Design Rules
+
+Source of truth: `Sambhav_Portfolio_Cursor_Design_Brief.pdf`. Build section-by-section; never generate the whole site in one pass. Prefer the simpler professional option when ambiguous.
+
+## Non-negotiable design principles
+
+- **Professional** — Clarity, hierarchy, typography, and project evidence over visual effects.
+- **Distinctive but restrained** — Subtle personality; avoid trend-heavy effects.
+- **No vibe coding** — Do not add effects just because they are technically possible.
+- **Content first** — Real project descriptions, technologies, and links over decoration.
+- **Consistency** — One spacing system, one radius language, one icon style, one animation language.
+- **Responsive** — Desktop and mobile designed intentionally, not merely stacked. Validate ~360 / 768 / 1024 / 1440px.
+- **Accessible** — Semantic HTML, keyboard nav, visible focus states, readable contrast, `prefers-reduced-motion`.
+
+## Locked-in visual decisions
+
+| Token | Value |
+| --- | --- |
+| Theme | Dark only |
+| Background | `#0A0A0A` |
+| Foreground | Near-white |
+| Muted text | Mid-gray |
+| Borders | Subtle `#27272A` |
+| Accent | `#E8A855` (muted amber/gold) — **CTAs, active nav/states, and link hovers only**. Do not use as decorative fill, gradients, or large backgrounds. |
+| Typography | **IBM Plex Sans** (primary sans). Optional monospace only for technical metadata. |
+
+Avoid: dominant gradients, glassmorphism, neon glow, giant animated type, floating blobs, particles, 3D/WebGL/shaders, fake metrics, skill %, oversized decorative UI.
+
+## Anti-vibe-coding checklist (brief §10)
+
+- Do not generate the entire portfolio in one pass.
+- Do not invent achievements, statistics, client names, users, awards, or experience.
+- Do not use generic AI copy (“crafting digital experiences”, “turning ideas into reality”, “passionate developer”) unless specifically rewritten.
+- Do not use a giant gradient headline with floating decorative blobs.
+- Do not use 3D / WebGL / shader effects in the initial version.
+- Do not use skill percentages or progress bars.
+- Do not create a dashboard-like Bento layout for every section.
+- Do not add testimonials unless genuine ones are provided.
+- Do not add a fake contact form that sends nowhere.
+- Do not hide important project information behind animations.
+- Do not optimize for visual novelty at the expense of readability.
+
+## Build order (stop after each phase for review)
+
+1. Inspect repo/setup → 2. Design tokens/typography/spacing → 3. Navbar + shell → 4. Hero → 5. Selected Work → 6. About + Technologies + Journey → 7. GitHub/Activity + Contact + Footer → 8. Responsive pass → 9. A11y/perf/SEO → 10. Micro-interactions only after approval.
+
+## Animation (allowed vs avoid)
+
+**Allowed:** subtle section reveals, restrained text entrance, image hover scale ~1.01–1.03, small translate/opacity, smooth anchors, active nav state.
+
+**Avoid:** cursor blobs, magnetic buttons everywhere, scroll hijacking, perpetual floating, particles, excessive parallax, animated gradients, WebGL/shaders unless explicitly approved.

@@ -1,0 +1,67 @@
+import Container from "./Container";
+
+const GROUPS = [
+  {
+    title: "Frontend",
+    items: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
+  },
+  {
+    title: "Backend",
+    items: ["Node.js", "Express", "REST APIs", "JWT"],
+  },
+  {
+    title: "Database",
+    items: ["PostgreSQL", "MySQL", "MongoDB", "SQL", "Prisma ORM"],
+  },
+  {
+    title: "Tools",
+    items: ["Git", "GitHub", "Postman", "Vercel", "Cloudinary"],
+  },
+];
+
+export default function Technologies() {
+  return (
+    <section
+      id="technologies"
+      aria-labelledby="technologies-heading"
+      className="scroll-mt-12 border-b border-border"
+    >
+      <Container className="py-14 md:py-20">
+        <header className="max-w-xl">
+          <h2
+            id="technologies-heading"
+            className="text-2xl font-medium tracking-tight text-foreground md:text-3xl"
+          >
+            Technologies
+          </h2>
+          <p className="mt-3 text-base text-muted">
+            Tools and stacks I use across projects—not proficiency scores.
+          </p>
+        </header>
+
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {GROUPS.map((group) => (
+            <div key={group.title}>
+              <h3 className="text-sm font-medium tracking-wide text-foreground">
+                {group.title}
+              </h3>
+              <ul
+                className="mt-4 flex flex-wrap gap-2"
+                aria-label={group.title}
+              >
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded border border-border px-2.5 py-1 font-mono text-xs text-muted"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
