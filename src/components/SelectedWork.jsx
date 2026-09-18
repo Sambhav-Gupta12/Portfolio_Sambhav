@@ -29,7 +29,7 @@ function ProjectVisual({ title, imageSrc, imageAlt }) {
   const alt = imageAlt || `${title} project screenshot`;
 
   return (
-    <figure className="relative m-0 overflow-hidden rounded border border-border transition-hover group-hover/project:border-accent">
+    <figure className="relative m-0 overflow-hidden rounded border border-border bg-[#141414] transition-hover group-hover/project:border-accent">
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-y-0 left-0 z-10 w-0.5 origin-top scale-y-0 bg-accent transition-hover group-hover/project:scale-y-100"
@@ -42,11 +42,11 @@ function ProjectVisual({ title, imageSrc, imageAlt }) {
           height={1000}
           loading="lazy"
           decoding="async"
-          className="aspect-[16/10] h-auto w-full object-cover transition-hover motion-safe:group-hover/project:scale-[1.02] motion-reduce:transform-none"
+          className="block h-auto w-full transition-hover motion-safe:group-hover/project:scale-[1.02] motion-reduce:transform-none"
         />
       ) : (
         <div
-          className="flex aspect-[16/10] w-full items-center justify-center bg-[#141414] px-3 transition-hover motion-safe:group-hover/project:scale-[1.02] motion-reduce:transform-none"
+          className="flex min-h-[12rem] w-full items-center justify-center px-3"
           role="img"
           aria-label={`${alt} (placeholder — screenshot pending)`}
         >

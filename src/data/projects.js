@@ -1,4 +1,8 @@
-/** Hand-authored project entries — real Live Demo / GitHub URLs. */
+import spendwiseImg from "../assets/projects/spendwise.png";
+import todoImg from "../assets/projects/todo.png";
+import spotifyImg from "../assets/projects/spotify-clone.jpg";
+
+/** Hand-authored project entries — real Live Demo / GitHub URLs + screenshots. */
 export const projects = [
   {
     id: "spendwise",
@@ -10,9 +14,9 @@ export const projects = [
     tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma"],
     description:
       "Built authenticated expense CRUD with category grouping and summary views. API and database layer handle persistence; the React client focuses on clear forms and readable totals.",
-    imageSrc: null,
+    imageSrc: spendwiseImg,
     imageAlt:
-      "SpendWise expense management app interface showing categorized spending and overview totals",
+      "SpendWise dashboard showing total spent, remaining budget, spending by date bar chart, and category donut chart",
     liveUrl: "https://expense-tracker-fullstack-flame.vercel.app",
     githubUrl: "https://github.com/Sambhav-Gupta12/Expense-Tracker-Fullstack",
   },
@@ -26,9 +30,9 @@ export const projects = [
     tech: ["React", "JavaScript", "CSS"],
     description:
       "Implemented local state for task lifecycle (add, toggle, filter) with a compact interface. Emphasis on predictable interactions and clear completed vs active states.",
-    imageSrc: null,
+    imageSrc: todoImg,
     imageAlt:
-      "Interactive to-do list interface with task items, completion states, and filters",
+      "Todo List app with task input, All Active Completed filters, and task cards with edit and delete actions",
     liveUrl: "https://to-do-list-react-weld-nine.vercel.app",
     githubUrl: "https://github.com/Sambhav-Gupta12/To_do_list_React",
   },
@@ -39,12 +43,12 @@ export const projects = [
     primary: false,
     valueProposition:
       "Recreate a music player layout with playlists, now-playing, and responsive navigation chrome.",
-    tech: ["React", "HTML", "CSS", "JavaScript"],
+    tech: ["HTML", "CSS", "JavaScript"],
     description:
       "Structured a multi-panel layout (sidebar, main content, player bar) with reusable UI pieces. Focused on visual hierarchy and responsive stacking rather than streaming APIs.",
-    imageSrc: null,
+    imageSrc: spotifyImg,
     imageAlt:
-      "Spotify-style music player UI with sidebar playlists, main content area, and player bar",
+      "Spotify Clone UI with library sidebar, trending songs grid, popular artists, and preview signup banner",
     liveUrl: "https://spotify-clone-tawny-phi.vercel.app",
     githubUrl: "https://github.com/Sambhav-Gupta12/Spotify-Clone",
   },
