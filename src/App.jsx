@@ -12,8 +12,11 @@ import { projects } from "./data/projects";
 function App() {
   return (
     <>
+      <a href="#main" className="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
-      <main>
+      <main id="main">
         <Hero />
         <SelectedWork projects={projects} />
         <About />

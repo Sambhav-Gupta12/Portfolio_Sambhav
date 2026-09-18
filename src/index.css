@@ -8,6 +8,7 @@
   html {
     color-scheme: dark;
     overflow-x: clip;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -25,8 +26,60 @@
     min-height: 100svh;
   }
 
+  /* Global visible focus for keyboard users */
+  :focus {
+    outline: none;
+  }
+
   :focus-visible {
     outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: absolute;
+    left: var(--space-4);
+    top: 0;
+    z-index: 100;
+    transform: translateY(-120%);
+    border-radius: var(--radius);
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    transform: translateY(var(--space-4));
+    outline: 2px solid var(--color-foreground);
     outline-offset: 2px;
   }
 }
@@ -62,7 +115,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .hero-enter-item {
-      animation: none;
+      animation: none !important;
       opacity: 1;
       transform: none;
     }

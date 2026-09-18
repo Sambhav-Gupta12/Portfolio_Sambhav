@@ -10,6 +10,9 @@ export const projects = [
     tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma"],
     description:
       "Built authenticated expense CRUD with category grouping and summary views. API and database layer handle persistence; the React client focuses on clear forms and readable totals.",
+    imageSrc: null,
+    imageAlt:
+      "SpendWise expense management app interface showing categorized spending and overview totals",
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -23,6 +26,9 @@ export const projects = [
     tech: ["React", "JavaScript", "CSS"],
     description:
       "Implemented local state for task lifecycle (add, toggle, filter) with a compact interface. Emphasis on predictable interactions and clear completed vs active states.",
+    imageSrc: null,
+    imageAlt:
+      "Interactive to-do list interface with task items, completion states, and filters",
     liveUrl: "#",
     githubUrl: "#",
   },
@@ -36,6 +42,9 @@ export const projects = [
     tech: ["React", "HTML", "CSS", "JavaScript"],
     description:
       "Structured a multi-panel layout (sidebar, main content, player bar) with reusable UI pieces. Focused on visual hierarchy and responsive stacking rather than streaming APIs.",
+    imageSrc: null,
+    imageAlt:
+      "Spotify-style music player UI with sidebar playlists, main content area, and player bar",
     liveUrl: "#",
     githubUrl: "#",
   },

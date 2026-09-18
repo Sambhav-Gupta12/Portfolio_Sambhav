@@ -1,18 +1,34 @@
 import Container from "./Container";
 
-function ProjectVisual({ title }) {
+function ProjectVisual({ title, imageSrc, imageAlt }) {
+  const alt =
+    imageAlt ||
+    `${title} project screenshot`;
+
   return (
-    <div className="group overflow-hidden rounded border border-border transition-[border-color] duration-200 hover:border-muted">
-      <div
-        className="flex aspect-[16/10] w-full items-center justify-center bg-[#141414] px-3 transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.02] motion-reduce:transform-none"
-        role="img"
-        aria-label={`${title} screenshot placeholder`}
-      >
-        <span className="text-center font-mono text-[0.65rem] uppercase tracking-wider text-muted sm:text-xs sm:tracking-widest">
-          Screenshot placeholder
-        </span>
-      </div>
-    </div>
+    <figure className="group m-0 overflow-hidden rounded border border-border transition-[border-color] duration-200 hover:border-muted">
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt={alt}
+          width={1600}
+          height={1000}
+          loading="lazy"
+          decoding="async"
+          className="aspect-[16/10] h-auto w-full object-cover transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.02] motion-reduce:transform-none"
+        />
+      ) : (
+        <div
+          className="flex aspect-[16/10] w-full items-center justify-center bg-[#141414] px-3 transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.02] motion-reduce:transform-none"
+          role="img"
+          aria-label={`${alt} (placeholder — screenshot pending)`}
+        >
+          <span className="text-center font-mono text-[0.65rem] uppercase tracking-wider text-muted sm:text-xs sm:tracking-widest">
+            Screenshot placeholder
+          </span>
+        </div>
+      )}
+    </figure>
   );
 }
 
@@ -24,6 +40,8 @@ function ProjectEntry({ project }) {
     valueProposition,
     tech,
     description,
+    imageSrc,
+    imageAlt,
     liveUrl,
     githubUrl,
   } = project;
@@ -63,7 +81,11 @@ function ProjectEntry({ project }) {
         </div>
 
         <div className="lg:col-span-7">
-          <ProjectVisual title={title} />
+          <ProjectVisual
+            title={title}
+            imageSrc={imageSrc}
+            imageAlt={imageAlt}
+          />
 
           <p className="mt-5 text-sm leading-relaxed text-muted md:text-base">
             {description}
@@ -78,7 +100,7 @@ function ProjectEntry({ project }) {
             </a>
             <a
               href={githubUrl}
-              className="inline-flex min-h-11 items-center px-1 text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="inline-flex min-h-11 items-center justify-center px-1 text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               GitHub
             </a>
