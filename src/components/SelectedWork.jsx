@@ -1,3 +1,4 @@
+import { Github } from "./icons";
 import Container from "./Container";
 
 function ProjectVisual({ title, imageSrc, imageAlt }) {
@@ -100,9 +101,10 @@ function ProjectEntry({ project }) {
             </a>
             <a
               href={githubUrl}
-              className="inline-flex min-h-11 items-center justify-center px-1 text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="inline-flex min-h-11 items-center gap-2 px-1 text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
-              GitHub
+              <Github size={14} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
+              <span>GitHub</span>
             </a>
           </div>
         </div>

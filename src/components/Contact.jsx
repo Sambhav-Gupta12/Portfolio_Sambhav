@@ -1,4 +1,5 @@
 import Container from "./Container";
+import SocialLink from "./SocialLink";
 import { socialLinks } from "../data/social";
 
 export default function Contact() {
@@ -23,17 +24,15 @@ export default function Contact() {
           </p>
 
           <ul className="mt-8 flex flex-wrap gap-x-2 gap-y-1">
-            {socialLinks.map(({ label, href }) => (
-              <li key={label}>
-                <a
+            {socialLinks.map(({ id, label, href }) => (
+              <li key={id}>
+                <SocialLink
+                  id={id}
                   href={href}
-                  {...(href.startsWith("mailto:")
-                    ? {}
-                    : { target: "_blank", rel: "noopener noreferrer" })}
-                  className="inline-flex min-h-11 items-center px-2 text-base font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                >
-                  {label}
-                </a>
+                  label={label}
+                  iconSize="md"
+                  className="min-h-11 px-2 text-base font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                />
               </li>
             ))}
           </ul>

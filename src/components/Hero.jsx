@@ -1,4 +1,5 @@
 import Container from "./Container";
+import SocialLink from "./SocialLink";
 
 export default function Hero() {
   return (
@@ -33,14 +34,13 @@ export default function Hero() {
             >
               View Work
             </a>
-            <a
+            <SocialLink
+              id="github"
               href="https://github.com/Sambhav-Gupta12"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center rounded border border-border px-5 text-sm font-medium text-foreground hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-            >
-              GitHub
-            </a>
+              label="GitHub"
+              iconSize="md"
+              className="min-h-11 justify-center rounded border border-border px-5 text-sm font-medium text-foreground hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            />
           </div>
         </div>
       </Container>

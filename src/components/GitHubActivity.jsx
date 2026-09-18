@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Github } from "./icons";
 import Container from "./Container";
 
 const MAX_REPOS = 8;
@@ -75,9 +76,10 @@ export default function GitHubActivity() {
             href="https://github.com/Sambhav-Gupta12"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="inline-flex min-h-11 items-center gap-2 text-sm text-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
-            View profile
+            <Github size={14} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
+            <span>View profile</span>
           </a>
         </header>
 
