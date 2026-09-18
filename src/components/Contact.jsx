@@ -7,6 +7,7 @@ export default function Contact() {
       id="contact"
       aria-labelledby="contact-heading"
       className="scroll-mt-12 border-b border-border"
+      data-reveal
     >
       <Container className="py-14 md:py-20">
         <div className="max-w-xl">

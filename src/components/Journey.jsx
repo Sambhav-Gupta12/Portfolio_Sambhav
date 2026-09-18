@@ -26,6 +26,7 @@ export default function Journey() {
       id="journey"
       aria-labelledby="journey-heading"
       className="scroll-mt-12 border-b border-border"
+      data-reveal
     >
       <Container className="py-14 md:py-20">
         <header className="max-w-xl">

@@ -8,8 +8,11 @@ import GitHubActivity from "./components/GitHubActivity";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { projects } from "./data/projects";
+import { useSectionReveal } from "./hooks/useSectionReveal";
 
 function App() {
+  useSectionReveal();
+
   return (
     <>
       <a href="#main" className="skip-link">

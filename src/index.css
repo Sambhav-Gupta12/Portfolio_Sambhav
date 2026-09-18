@@ -113,11 +113,31 @@
     animation-delay: 240ms;
   }
 
+  /* Subtle section reveal on scroll — only after JS enables html.reveal-js */
+  html.reveal-js [data-reveal] {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition:
+      opacity 0.55s ease-out,
+      transform 0.55s ease-out;
+  }
+
+  html.reveal-js [data-reveal].is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .hero-enter-item {
       animation: none !important;
       opacity: 1;
       transform: none;
+    }
+
+    html.reveal-js [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
     }
   }
 }

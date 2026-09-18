@@ -1,19 +1,28 @@
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import Container from "./Container";
+import { useActiveSection } from "../hooks/useActiveSection";
 
 const NAV_LINKS = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#journey", label: "Journey" },
-  { href: "#contact", label: "Contact" },
+  { href: "#work", id: "work", label: "Work" },
+  { href: "#about", id: "about", label: "About" },
+  { href: "#journey", id: "journey", label: "Journey" },
+  { href: "#contact", id: "contact", label: "Contact" },
 ];
 
-const linkClass =
-  "text-sm text-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+function linkClassName(isActive) {
+  return [
+    "text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
+    isActive
+      ? "font-medium text-accent"
+      : "text-muted hover:text-accent",
+  ].join(" ");
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const menuId = useId();
+  const sectionIds = useMemo(() => NAV_LINKS.map((link) => link.id), []);
+  const activeId = useActiveSection(sectionIds);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -54,16 +63,20 @@ export default function Navbar() {
           </a>
 
           <ul className="hidden items-center gap-1 md:flex">
-            {NAV_LINKS.map(({ href, label }) => (
-              <li key={href}>
-                <a
-                  href={href}
-                  className={`${linkClass} inline-flex min-h-11 items-center px-2.5`}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
+            {NAV_LINKS.map(({ href, id, label }) => {
+              const isActive = activeId === id;
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`${linkClassName(isActive)} inline-flex min-h-11 items-center px-2.5`}
+                    aria-current={isActive ? "true" : undefined}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           <button
@@ -93,17 +106,21 @@ export default function Navbar() {
           className={`border-t border-border md:hidden ${open ? "block" : "hidden"}`}
         >
           <Container as="ul" className="flex flex-col py-2">
-            {NAV_LINKS.map(({ href, label }) => (
-              <li key={href}>
-                <a
-                  href={href}
-                  className={`${linkClass} flex min-h-11 items-center`}
-                  onClick={closeMenu}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
+            {NAV_LINKS.map(({ href, id, label }) => {
+              const isActive = activeId === id;
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`${linkClassName(isActive)} flex min-h-11 items-center`}
+                    aria-current={isActive ? "true" : undefined}
+                    onClick={closeMenu}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
           </Container>
         </div>
       </nav>

@@ -56,6 +56,7 @@ export default function GitHubActivity() {
       id="activity"
       aria-labelledby="activity-heading"
       className="scroll-mt-12 border-b border-border"
+      data-reveal
     >
       <Container className="py-12 md:py-14">
         <header className="flex flex-wrap items-end justify-between gap-3">

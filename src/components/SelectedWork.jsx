@@ -117,6 +117,7 @@ export default function SelectedWork({ projects }) {
       id="work"
       aria-labelledby="work-heading"
       className="scroll-mt-12 border-b border-border"
+      data-reveal
     >
       <Container className="py-12 md:py-16 lg:py-20">
         <header className="max-w-xl">

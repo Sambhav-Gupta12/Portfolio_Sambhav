@@ -6,6 +6,7 @@ export default function About() {
       id="about"
       aria-labelledby="about-heading"
       className="scroll-mt-12 border-b border-border"
+      data-reveal
     >
       <Container className="py-12 md:py-16 lg:py-20">
         <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
