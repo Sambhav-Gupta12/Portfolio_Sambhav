@@ -135,6 +135,8 @@ function ProjectEntry({ project }) {
         <div className="mt-5 flex flex-wrap gap-x-2 gap-y-2">
           <a
             href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition-hover inline-flex min-h-11 items-center px-1 text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             data-cursor="hover"
           >
@@ -142,6 +144,8 @@ function ProjectEntry({ project }) {
           </a>
           <a
             href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="transition-hover inline-flex min-h-11 items-center gap-2 px-1 text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             data-cursor="hover"
           >

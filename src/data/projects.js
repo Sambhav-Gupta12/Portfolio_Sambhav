@@ -1,4 +1,4 @@
-/** Static placeholder project data — replace links/screenshots with real assets later. */
+/** Hand-authored project entries — real Live Demo / GitHub URLs. */
 export const projects = [
   {
     id: "spendwise",
@@ -13,8 +13,8 @@ export const projects = [
     imageSrc: null,
     imageAlt:
       "SpendWise expense management app interface showing categorized spending and overview totals",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://expense-tracker-fullstack-flame.vercel.app",
+    githubUrl: "https://github.com/Sambhav-Gupta12/Expense-Tracker-Fullstack",
   },
   {
     id: "todo",
@@ -29,8 +29,8 @@ export const projects = [
     imageSrc: null,
     imageAlt:
       "Interactive to-do list interface with task items, completion states, and filters",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://to-do-list-react-weld-nine.vercel.app",
+    githubUrl: "https://github.com/Sambhav-Gupta12/To_do_list_React",
   },
   {
     id: "spotify-clone",
@@ -45,7 +45,7 @@ export const projects = [
     imageSrc: null,
     imageAlt:
       "Spotify-style music player UI with sidebar playlists, main content area, and player bar",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://spotify-clone-tawny-phi.vercel.app",
+    githubUrl: "https://github.com/Sambhav-Gupta12/Spotify-Clone",
   },
 ];
