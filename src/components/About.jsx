@@ -7,9 +7,9 @@ export default function About() {
       aria-labelledby="about-heading"
       className="scroll-mt-12 border-b border-border"
     >
-      <Container className="py-14 md:py-20">
-        <div className="grid gap-8 md:grid-cols-12 md:gap-10">
-          <div className="md:col-span-4">
+      <Container className="py-12 md:py-16 lg:py-20">
+        <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-4">
             <h2
               id="about-heading"
               className="text-2xl font-medium tracking-tight text-foreground md:text-3xl"
@@ -18,7 +18,7 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="max-w-2xl space-y-4 md:col-span-8">
+          <div className="max-w-2xl space-y-4 lg:col-span-8">
             <p className="text-base leading-relaxed text-muted">
               I&apos;m a Computer Science student at JSS Academy of Technical
               Education, Noida (2025–2029), learning by building real web

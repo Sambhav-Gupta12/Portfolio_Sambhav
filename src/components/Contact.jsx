@@ -21,7 +21,7 @@ export default function Contact() {
             out directly.
           </p>
 
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+          <ul className="mt-8 flex flex-wrap gap-x-2 gap-y-1">
             {socialLinks.map(({ label, href }) => (
               <li key={label}>
                 <a
@@ -29,7 +29,7 @@ export default function Contact() {
                   {...(href.startsWith("mailto:")
                     ? {}
                     : { target: "_blank", rel: "noopener noreferrer" })}
-                  className="text-base font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  className="inline-flex min-h-11 items-center px-2 text-base font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   {label}
                 </a>

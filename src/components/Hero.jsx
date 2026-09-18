@@ -7,11 +7,11 @@ export default function Hero() {
       aria-labelledby="hero-name"
       className="scroll-mt-12 border-b border-border"
     >
-      <Container className="flex min-h-[calc(100svh-3rem)] flex-col justify-center py-16 md:py-20">
+      <Container className="flex min-h-[calc(100svh-3rem)] flex-col justify-center py-12 md:py-16 lg:py-20">
         <div className="hero-enter max-w-2xl">
           <h1
             id="hero-name"
-            className="hero-enter-item text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl"
+            className="hero-enter-item text-3xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl"
           >
             SAMBHAV GUPTA
           </h1>
@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="hero-enter-item mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#work"
-              className="inline-flex items-center justify-center rounded bg-accent px-4 py-2 text-sm font-medium text-background hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="inline-flex min-h-11 items-center justify-center rounded bg-accent px-5 text-sm font-medium text-background hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               View Work
             </a>
@@ -37,7 +37,7 @@ export default function Hero() {
               href="https://github.com/Sambhav-Gupta12"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded border border-border px-4 py-2 text-sm font-medium text-foreground hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="inline-flex min-h-11 items-center justify-center rounded border border-border px-5 text-sm font-medium text-foreground hover:border-accent hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               GitHub
             </a>

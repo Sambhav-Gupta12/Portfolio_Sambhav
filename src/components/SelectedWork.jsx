@@ -4,11 +4,11 @@ function ProjectVisual({ title }) {
   return (
     <div className="group overflow-hidden rounded border border-border transition-[border-color] duration-200 hover:border-muted">
       <div
-        className="flex aspect-[16/10] w-full items-center justify-center bg-[#141414] transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.02] motion-reduce:transform-none"
+        className="flex aspect-[16/10] w-full items-center justify-center bg-[#141414] px-3 transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.02] motion-reduce:transform-none"
         role="img"
         aria-label={`${title} screenshot placeholder`}
       >
-        <span className="font-mono text-xs uppercase tracking-widest text-muted">
+        <span className="text-center font-mono text-[0.65rem] uppercase tracking-wider text-muted sm:text-xs sm:tracking-widest">
           Screenshot placeholder
         </span>
       </div>
@@ -29,9 +29,10 @@ function ProjectEntry({ project }) {
   } = project;
 
   return (
-    <article className="border-t border-border py-10 md:py-14">
-      <div className="grid gap-8 md:grid-cols-12 md:gap-10">
-        <div className="md:col-span-5">
+    <article className="border-t border-border py-10 md:py-12 lg:py-14">
+      {/* Stacked until lg (1024px); editorial side-by-side from 1024 up */}
+      <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-5">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <span className="font-mono text-sm text-muted">{number}</span>
             {primary && (
@@ -53,7 +54,7 @@ function ProjectEntry({ project }) {
             {tech.map((label) => (
               <li
                 key={label}
-                className="rounded border border-border px-2.5 py-1 font-mono text-xs text-muted"
+                className="rounded border border-border px-3 py-1.5 font-mono text-xs text-muted"
               >
                 {label}
               </li>
@@ -61,23 +62,23 @@ function ProjectEntry({ project }) {
           </ul>
         </div>
 
-        <div className="md:col-span-7">
+        <div className="lg:col-span-7">
           <ProjectVisual title={title} />
 
           <p className="mt-5 text-sm leading-relaxed text-muted md:text-base">
             {description}
           </p>
 
-          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+          <div className="mt-5 flex flex-wrap gap-x-2 gap-y-2">
             <a
               href={liveUrl}
-              className="text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="inline-flex min-h-11 items-center px-1 text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               Live Demo
             </a>
             <a
               href={githubUrl}
-              className="text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+              className="inline-flex min-h-11 items-center px-1 text-sm font-medium text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               GitHub
             </a>
@@ -95,7 +96,7 @@ export default function SelectedWork({ projects }) {
       aria-labelledby="work-heading"
       className="scroll-mt-12 border-b border-border"
     >
-      <Container className="py-14 md:py-20">
+      <Container className="py-12 md:py-16 lg:py-20">
         <header className="max-w-xl">
           <h2
             id="work-heading"

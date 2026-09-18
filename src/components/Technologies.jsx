@@ -26,7 +26,7 @@ export default function Technologies() {
       aria-labelledby="technologies-heading"
       className="scroll-mt-12 border-b border-border"
     >
-      <Container className="py-14 md:py-20">
+      <Container className="py-12 md:py-16 lg:py-20">
         <header className="max-w-xl">
           <h2
             id="technologies-heading"
@@ -39,9 +39,10 @@ export default function Technologies() {
           </p>
         </header>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 360: 1 col · 768: 2 cols · 1024+: 4 cols */}
+        <div className="mt-8 grid gap-8 md:mt-10 md:grid-cols-2 md:gap-x-8 md:gap-y-10 lg:grid-cols-4">
           {GROUPS.map((group) => (
-            <div key={group.title}>
+            <div key={group.title} className="min-w-0">
               <h3 className="text-sm font-medium tracking-wide text-foreground">
                 {group.title}
               </h3>
@@ -52,7 +53,7 @@ export default function Technologies() {
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded border border-border px-2.5 py-1 font-mono text-xs text-muted"
+                    className="rounded border border-border px-3 py-1.5 font-mono text-xs leading-snug text-muted"
                   >
                     {item}
                   </li>

@@ -10,14 +10,14 @@ export default function Footer() {
       className="scroll-mt-12 border-t border-border"
       aria-label="Footer"
     >
-      <Container className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
+      <Container className="flex flex-col gap-3 py-6 md:flex-row md:items-center md:justify-between md:gap-4">
         <p className="text-sm text-muted">
           <span className="font-medium text-foreground">Sambhav Gupta</span>
           <span aria-hidden="true"> · </span>
           <span>{year}</span>
         </p>
 
-        <ul className="flex flex-wrap gap-x-5 gap-y-2">
+        <ul className="flex flex-wrap gap-x-1 gap-y-1">
           {socialLinks.map(({ label, href }) => (
             <li key={label}>
               <a
@@ -25,7 +25,7 @@ export default function Footer() {
                 {...(href.startsWith("mailto:")
                   ? {}
                   : { target: "_blank", rel: "noopener noreferrer" })}
-                className="text-sm text-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="inline-flex min-h-11 items-center px-2 text-sm text-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 {label}
               </a>

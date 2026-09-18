@@ -98,14 +98,14 @@ export default function GitHubActivity() {
         )}
 
         {status === "ready" && repos.length > 0 && (
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {repos.map((repo) => (
-              <li key={repo.name}>
+              <li key={repo.name} className="min-w-0">
                 <a
                   href={repo.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block h-full rounded border border-border p-3 transition-[border-color] duration-200 hover:border-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  className="block h-full min-h-11 rounded border border-border p-3 transition-[border-color] duration-200 hover:border-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   <div className="flex items-baseline justify-between gap-2">
                     <span className="truncate text-sm font-medium text-foreground">
@@ -116,7 +116,7 @@ export default function GitHubActivity() {
                     </span>
                   </div>
                   {repo.description && (
-                    <p className="mt-1.5 line-clamp-1 text-xs text-muted">
+                    <p className="mt-1.5 line-clamp-1 break-words text-xs text-muted">
                       {repo.description}
                     </p>
                   )}

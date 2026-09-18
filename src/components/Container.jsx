@@ -6,7 +6,7 @@ export default function Container({
 }) {
   return (
     <Tag
-      className={`mx-auto w-full max-w-container px-4 sm:px-5 md:px-6 ${className}`.trim()}
+      className={`mx-auto w-full max-w-container px-4 md:px-6 lg:px-8 ${className}`.trim()}
       {...props}
     >
       {children}
