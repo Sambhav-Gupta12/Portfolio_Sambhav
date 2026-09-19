@@ -7,8 +7,8 @@ const sizeMap = {
 };
 
 /**
- * Icon + label link for Email / GitHub / LinkedIn.
- * @param {"email"|"github"|"linkedin"} id
+ * Icon + label link for Email / GitHub / LinkedIn / Resume.
+ * @param {"email"|"github"|"linkedin"|"resume"} id
  */
 export default function SocialLink({
   id,

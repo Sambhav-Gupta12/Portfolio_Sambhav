@@ -1,6 +1,8 @@
 import { useEffect, useId, useMemo, useState } from "react";
+import { FileText } from "lucide-react";
 import Container from "./Container";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { RESUME_HREF } from "../data/social";
 
 const NAV_LINKS = [
   { href: "#work", id: "work", label: "Work" },
@@ -8,6 +10,22 @@ const NAV_LINKS = [
   { href: "#journey", id: "journey", label: "Journey" },
   { href: "#contact", id: "contact", label: "Contact" },
 ];
+
+function ResumeNavLink({ className = "", onClick }) {
+  return (
+    <a
+      href={RESUME_HREF}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-cursor="hover"
+      onClick={onClick}
+      className={`transition-hover inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${className}`.trim()}
+    >
+      <FileText size={14} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
+      <span>View Resume</span>
+    </a>
+  );
+}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -54,23 +72,26 @@ export default function Navbar() {
             SAMBHAV GUPTA
           </a>
 
-          <ul className="hidden items-center gap-1 md:flex">
-            {NAV_LINKS.map(({ href, id, label }) => {
-              const isActive = activeId === id;
-              return (
-                <li key={href}>
-                  <a
-                    href={href}
-                    className="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                    data-cursor="hover"
-                    aria-current={isActive ? "true" : undefined}
-                  >
-                    {label}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="hidden items-center gap-2 md:flex">
+            <ul className="flex items-center gap-1">
+              {NAV_LINKS.map(({ href, id, label }) => {
+                const isActive = activeId === id;
+                return (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      className="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                      data-cursor="hover"
+                      aria-current={isActive ? "true" : undefined}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <ResumeNavLink className="min-h-9 px-2.5" />
+          </div>
 
           <button
             type="button"
@@ -116,6 +137,9 @@ export default function Navbar() {
                 </li>
               );
             })}
+            <li className="pt-2">
+              <ResumeNavLink className="min-h-11 px-0" onClick={closeMenu} />
+            </li>
           </Container>
         </div>
       </nav>

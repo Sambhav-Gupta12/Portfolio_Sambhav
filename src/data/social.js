@@ -1,11 +1,14 @@
-import { Mail } from "lucide-react";
+import { Mail, FileText } from "lucide-react";
 import { Github, Linkedin } from "../components/icons";
 
 export const socialIcons = {
   email: Mail,
   github: Github,
   linkedin: Linkedin,
+  resume: FileText,
 };
+
+export const RESUME_HREF = "/resume.pdf";
 
 export const socialLinks = [
   {
@@ -22,5 +25,10 @@ export const socialLinks = [
     id: "linkedin",
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/sambhav-gupta-494347369",
+  },
+  {
+    id: "resume",
+    label: "View Resume",
+    href: RESUME_HREF,
   },
 ];

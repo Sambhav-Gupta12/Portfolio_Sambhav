@@ -19,7 +19,9 @@ export default function Footer() {
         </p>
 
         <ul className="flex flex-wrap gap-x-1 gap-y-1">
-          {socialLinks.map(({ id, label, href }) => (
+          {socialLinks
+            .filter((link) => link.id !== "resume")
+            .map(({ id, label, href }) => (
             <li key={id}>
               <SocialLink
                 id={id}
