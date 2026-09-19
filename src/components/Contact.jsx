@@ -2,6 +2,7 @@ import Container from "./Container";
 import SocialLink from "./SocialLink";
 import { socialLinks } from "../data/social";
 import { RevealSection } from "./Reveal";
+import WordReveal from "./WordReveal";
 
 export default function Contact() {
   return (
@@ -18,10 +19,10 @@ export default function Contact() {
           >
             Contact
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-muted">
+          <WordReveal className="mt-3 text-base leading-relaxed text-muted">
             Want to talk about a project, internship, or collaboration? Reach
             out directly.
-          </p>
+          </WordReveal>
 
           <ul className="mt-8 flex flex-wrap gap-x-2 gap-y-1">
             {socialLinks.map(({ id, label, href }) => (

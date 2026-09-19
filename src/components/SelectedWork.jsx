@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Github } from "./icons";
 import Container from "./Container";
 import { RevealItem, RevealSection, RevealStagger } from "./Reveal";
+import WordReveal from "./WordReveal";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 import {
   chipHoverStagger,
@@ -114,9 +115,9 @@ function ProjectEntry({ project }) {
           {title}
         </h3>
 
-        <p className="mt-3 text-base leading-relaxed text-muted">
+        <WordReveal className="mt-3 text-base leading-relaxed text-muted">
           {valueProposition}
-        </p>
+        </WordReveal>
 
         <TechChips tech={tech} animated={!reducedMotion} />
       </div>
@@ -128,9 +129,9 @@ function ProjectEntry({ project }) {
           imageAlt={imageAlt}
         />
 
-        <p className="mt-5 text-sm leading-relaxed text-muted md:text-base">
+        <WordReveal className="mt-5 text-sm leading-relaxed text-muted md:text-base">
           {description}
-        </p>
+        </WordReveal>
 
         <div className="mt-5 flex flex-wrap gap-x-2 gap-y-2">
           <a

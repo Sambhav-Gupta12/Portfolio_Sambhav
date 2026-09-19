@@ -1,5 +1,6 @@
 import Container from "./Container";
 import { RevealSection } from "./Reveal";
+import WordReveal from "./WordReveal";
 
 export default function About() {
   return (
@@ -20,22 +21,22 @@ export default function About() {
           </div>
 
           <div className="max-w-2xl space-y-4 lg:col-span-8">
-            <p className="text-base leading-relaxed text-muted">
+            <WordReveal className="text-base leading-relaxed text-muted">
               I&apos;m a Computer Science student at JSS Academy of Technical
               Education, Noida (2025–2029), learning by building real web
               applications end to end.
-            </p>
-            <p className="text-base leading-relaxed text-muted">
+            </WordReveal>
+            <WordReveal className="text-base leading-relaxed text-muted">
               I started with frontend fundamentals—HTML, CSS, and
               JavaScript—then moved into React for structured UI work. From
               there I expanded into full-stack development with Node.js and
               Express, connecting clients to APIs and databases.
-            </p>
-            <p className="text-base leading-relaxed text-muted">
+            </WordReveal>
+            <WordReveal className="text-base leading-relaxed text-muted">
               Right now I&apos;m focused on databases, backend patterns, and
               system design fundamentals so I can design clearer data models and
               more reliable server-side systems.
-            </p>
+            </WordReveal>
           </div>
         </div>
       </Container>
