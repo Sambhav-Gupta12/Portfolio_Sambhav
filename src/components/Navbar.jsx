@@ -95,7 +95,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="transition-hover inline-flex h-11 w-11 items-center justify-center rounded border border-border text-foreground hover:border-muted hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:hidden"
+            className="transition-hover inline-flex h-11 w-11 items-center justify-center rounded text-foreground hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:hidden"
             data-cursor="hover"
             aria-expanded={open}
             aria-controls={menuId}
